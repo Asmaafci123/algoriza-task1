@@ -22,9 +22,20 @@ class RegisterScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: 170,
-              color: const Color(0xFF51AFAB),
+            Stack(
+              children: [
+                Container(
+                  height: 100,
+                  color: const Color(0xFF51AFAB),
+                ),
+                Positioned(
+                    top: SizeConfig.defaultSize! * 3,
+                    left: SizeConfig.defaultSize! * 2,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/back-arrow1.png'),
+                    ))
+              ],
             ),
             SizedBox(
               height: SizeConfig.defaultSize! * 2,
