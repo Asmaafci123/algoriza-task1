@@ -105,20 +105,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.phone,
                       prefix: CountryListPick(
                         theme: CountryTheme(
-                            isShowFlag: false,
-                            isShowTitle: false,
-                            isShowCode: true,
-                            isDownIcon: true,
-                            showEnglishName: true,
-                            lastPickText: _code.toString(),
-                            labelColor: Colors.black),
+                          isShowFlag: false,
+                          isShowTitle: false,
+                          isShowCode: true,
+                          isDownIcon: true,
+                          showEnglishName: true,
+                          lastPickText: _code.toString(),
+                        ),
                         initialSelection: '+20',
                         useSafeArea: false,
                         onChanged: (CountryCode? code) {
-                          setState(() {
-                            _code = code!;
-                          });
+                          _code = code;
                         },
+                        useUiOverlay: true,
                       ),
                     ),
                     SizedBox(

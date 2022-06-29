@@ -8,14 +8,9 @@ import 'package:task1/widgets/input-field.dart';
 
 import '../widgets/material-button.dart';
 
-class RegisterScreen extends StatefulWidget {
+class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
-  @override
-  State<RegisterScreen> createState() => _RegisterScreen();
-}
-
-class _RegisterScreen extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     CountryCode? _code;
@@ -133,9 +128,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                         initialSelection: '+20',
                         useSafeArea: false,
                         onChanged: (CountryCode? code) {
-                          setState(() {
-                            _code = code!;
-                          });
+                          _code = code;
                         },
                       ),
                     ),

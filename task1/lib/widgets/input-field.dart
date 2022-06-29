@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task1/size.dart';
 
-class InputField extends StatelessWidget {
+class InputField extends StatefulWidget {
   final String hintText;
   final TextInputType keyboardType;
   final Widget? prefix;
@@ -16,6 +15,11 @@ class InputField extends StatelessWidget {
       required this.error})
       : super(key: key);
 
+  @override
+  State<InputField> createState() => _InputFieldState();
+}
+
+class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -34,15 +38,15 @@ class InputField extends StatelessWidget {
               borderRadius: BorderRadius.circular(5)),
           fillColor: const Color(0xFFFDFCFF),
           filled: true,
-          hintText: hintText,
+          hintText: widget.hintText,
           hintStyle: TextStyle(
             color: Colors.grey[500],
           ),
-          prefixIcon: prefix,
-          suffixIcon: suffix),
-      keyboardType: keyboardType,
+          prefixIcon: widget.prefix,
+          suffixIcon: widget.suffix),
+      keyboardType: widget.keyboardType,
       validator: (value) {
-        if (value!.isEmpty) return error;
+        if (value!.isEmpty) return widget.error;
       },
     );
   }
